@@ -19,7 +19,7 @@ public class JazzbarController {
 		System.out.println("====/jazzbars====");
 		System.out.println(jazzbars.size());
 		model.addAttribute("jazzbars", jazzbars); 
-		return("/jazzbar/list");
+		return "jazzbar/list";
 	}
 
 	@PostMapping("/jazzbar/create")
