@@ -16,6 +16,8 @@ public class JazzbarController {
 	
 	@GetMapping("/jazzbars")
 	public String list(Model model){
+		System.out.println("====/jazzbars====");
+		System.out.println(jazzbars.size());
 		model.addAttribute("jazzbars", jazzbars); 
 		return("/jazzbar/list");
 	}

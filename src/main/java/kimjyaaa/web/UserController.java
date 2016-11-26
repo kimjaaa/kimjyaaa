@@ -17,10 +17,19 @@ import kimjyaaa.model.User;
 public class UserController {
 	private List<User> users = new ArrayList<User>();
 
-		@PostMapping("/users")
-		public String list(User user){
-			System.out.println("user : " + user);
-			return ("/user/form");
+		@PostMapping("/user/create")
+		public String create(User user){
+			System.out.println("users : " + users);
+			users.add(user);
+			return ("redirect:/users");
 		}
+		
+		@GetMapping("/users")
+		public String list(Model model){
+			model.addAttribute("users", users);
+			return("/user/list");
+			
+		}
+		
 	
 }
